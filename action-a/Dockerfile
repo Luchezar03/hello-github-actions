@@ -1,4 +1,3 @@
-FROM debian:10.9-slim
-
-RUN apt-get install python3-pip -y
-RUN python3 -m http.server 80
+FROM debian
+ 
+RUN apt-get update -y && apt-get install python3-pip -y && pip3 install pip
