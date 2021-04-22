@@ -1,3 +1,5 @@
-FROM debian
- 
-RUN apt-get update -y && apt-get install python3-pip -y && pip3 install pip
+FROM debian:9.5-slim
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
